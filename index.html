@@ -1,77 +1,96 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>F.H.U. KLAUDIA - Sklep internetowy</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-    <!-- Nagłówek -->
+    <!-- Nagłówek sklepu -->
     <header>
-        <div class="logo">F.H.U. KLAUDIA</div>
+        <div class="logo">
+            <h1>F.H.U. KLAUDIA</h1>
+            <p>Sklep z meblami ogrodowymi i produktami do domu</p>
+        </div>
         <nav>
             <ul>
-                <li><a href="#grille">Grille Ogrodowe</a></li>
-                <li><a href="#meble">Meble</a></li>
-                <li><a href="#szklo">Szkło</a></li>
+                <li><a href="#home">Strona Główna</a></li>
+                <li><a href="#produkty">Produkty</a></li>
+                <li><a href="#o-nas">O nas</a></li>
+                <li><a href="#regulamin">Regulamin</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Baner główny -->
-    <section class="banner">
-        <h1>Twój wymarzony ogród - Grille, Meble, Szkło</h1>
-        <p>Oferujemy najlepsze meble ogrodowe i akcesoria dla Twojego ogrodu!</p>
+    <!-- Sekcja produktów -->
+    <section id="produkty" class="product-section">
+        <h2>Nasze produkty</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="grill.jpg" alt="Grill ogrodowy">
+                <h3>Grill Ogrodowy</h3>
+                <p>Grill ogrodowy wysokiej jakości. Idealny na każdą okazję!</p>
+                <span>899,00 zł</span>
+                <button onclick="addToCart('Grill Ogrodowy', 899)">Dodaj do koszyka</button>
+            </div>
+            <div class="product">
+                <img src="mebel.jpg" alt="Meble ogrodowe">
+                <h3>Meble Ogrodowe</h3>
+                <p>Komplet mebli ogrodowych dla całej rodziny, trwałe i eleganckie.</p>
+                <span>1200,00 zł</span>
+                <button onclick="addToCart('Meble Ogrodowe', 1200)">Dodaj do koszyka</button>
+            </div>
+            <div class="product">
+                <img src="szklo.jpg" alt="Szkło Ogrodowe">
+                <h3>Szkło Ogrodowe</h3>
+                <p>Piękne dekoracje ogrodowe w formie szkła. Zrób swój ogród wyjątkowym.</p>
+                <span>350,00 zł</span>
+                <button onclick="addToCart('Szkło Ogrodowe', 350)">Dodaj do koszyka</button>
+            </div>
+        </div>
     </section>
 
-    <!-- Produkty -->
-    <main>
-        <section id="grille" class="products">
-            <h2>Grille Ogrodowe</h2>
-            <div class="product">
-                <img src="https://via.placeholder.com/200" alt="Grill 1">
-                <h3>Grill Okrągły</h3>
-                <p>Idealny do ogrodu. Łatwy w użyciu. Wysoka jakość wykonania.</p>
-                <p class="price">499,00 zł</p>
-                <button class="add-to-cart">Dodaj do koszyka</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/200" alt="Grill 2">
-                <h3>Grill Prostokątny</h3>
-                <p>Nowoczesny grill dla całej rodziny. Wygodny i efektywny.</p>
-                <p class="price">699,00 zł</p>
-                <button class="add-to-cart">Dodaj do koszyka</button>
-            </div>
-        </section>
+    <!-- Koszyk -->
+    <div class="cart-container">
+        <button id="view-cart" class="view-cart">Koszyk</button>
+        <div id="cart-popup" class="cart-popup">
+            <h2>Twój Koszyk</h2>
+            <ul id="cart-items"></ul>
+            <p><strong>Razem:</strong> <span id="total-price">0,00 zł</span></p>
+            <button class="checkout">Zamów teraz</button>
+            <button class="close-cart" onclick="closeCart()">Zamknij</button>
+        </div>
+    </div>
 
-        <section id="meble" class="products">
-            <h2>Meble Ogrodowe</h2>
-            <div class="product">
-                <img src="https://via.placeholder.com/200" alt="Meble 1">
-                <h3>Zestaw Ogrodowy</h3>
-                <p>Stylowy zestaw mebli do ogrodu z solidnego drewna.</p>
-                <p class="price">1 199,00 zł</p>
-                <button class="add-to-cart">Dodaj do koszyka</button>
-            </div>
-        </section>
+    <!-- Sekcja O nas -->
+    <section id="o-nas">
+        <h2>O nas</h2>
+        <p>F.H.U. KLAUDIA to firma specjalizująca się w sprzedaży wysokiej jakości mebli ogrodowych i akcesoriów do ogrodu. Naszym celem jest zapewnienie naszym klientom produktów, które pozwolą im stworzyć wyjątkową przestrzeń w ich ogrodzie. Działamy na rynku od 10 lat, oferując produkty tylko od sprawdzonych dostawców.</p>
+    </section>
 
-        <section id="szklo" class="products">
-            <h2>Szkło</h2>
-            <div class="product">
-                <img src="https://via.placeholder.com/200" alt="Szkło 1">
-                <h3>Szklany Stół</h3>
-                <p>Elegancki stół szklany do ogrodu lub na taras.</p>
-                <p class="price">799,00 zł</p>
-                <button class="add-to-cart">Dodaj do koszyka</button>
-            </div>
-        </section>
-    </main>
+    <!-- Regulamin sklepu -->
+    <section id="regulamin">
+        <h2>Regulamin sklepu</h2>
+        <p>Witamy w sklepie F.H.U. KLAUDIA. Zanim dokonasz zakupu, prosimy zapoznać się z naszym regulaminem:</p>
+        <ul>
+            <li><strong>1. Zakupy:</strong> Zakupy w naszym sklepie są możliwe tylko po zarejestrowaniu się lub zalogowaniu.</li>
+            <li><strong>2. Ceny:</strong> Wszystkie ceny są podane w złotych polskich i zawierają VAT.</li>
+            <li><strong>3. Metody płatności:</strong> Akceptujemy płatności kartą, przelewem bankowym oraz za pomocą systemu PayPal.</li>
+            <li><strong>4. Zwroty:</strong> Zgodnie z ustawą o ochronie konsumentów, masz prawo do zwrotu towaru w ciągu 14 dni roboczych.</li>
+            <li><strong>5. Kontakt:</strong> Jeśli masz pytania, skontaktuj się z nami na adres <a href="mailto:kontakt@fhu-klaudia.pl">kontakt@fhu-klaudia.pl</a>.</li>
+        </ul>
+    </section>
 
     <!-- Stopka -->
     <footer>
         <p>&copy; 2025 F.H.U. KLAUDIA</p>
-        <p><a href="mailto:kontakt@fhu-klaudia.pl">Kontakt</a></p>
+        <p><a href="mailto:kontakt@fhu-klaudia.pl">Kontakt</a> | <a href="#regulamin">Regulamin</a> | <a href="#o-nas">O nas</a></p>
     </footer>
 </body>
+
 </html>

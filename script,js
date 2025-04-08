@@ -1,0 +1,31 @@
+let cart = [];
+
+function addToCart(productName, productPrice) {
+    cart.push({ name: productName, price: productPrice });
+    updateCartDisplay();
+}
+
+function updateCartDisplay() {
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+    let totalPrice = 0;
+    
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.innerText = `${item.name} - ${item.price} zł`;
+        cartItems.appendChild(li);
+        totalPrice += item.price;
+    });
+    
+    document.getElementById('total-price').innerText = `${totalPrice.toFixed(2)} zł`;
+}
+
+function openCart() {
+    document.getElementById('cart-popup').style.display = 'block';
+}
+
+function closeCart() {
+    document.getElementById('cart-popup').style.display = 'none';
+}
+
+document.getElementById('view-cart').addEventListener('click', openCart);

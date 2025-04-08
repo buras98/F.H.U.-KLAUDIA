@@ -1,79 +1,51 @@
-/* Resetowanie podstawowych stylów */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Podstawowy styl strony */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #f7f7f7;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-/* Nagłówek */
 header {
-    background-color: #d3bda8;
-    padding: 1rem;
+    background-color: #5a4e44;
+    color: white;
+    padding: 20px;
     text-align: center;
 }
 
-header .logo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #5a4e44;
-}
-
-nav ul {
+header nav ul {
     list-style-type: none;
     padding: 0;
 }
 
-nav ul li {
+header nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin: 0 15px;
 }
 
-nav ul li a {
-    color: #5a4e44;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-/* Banner */
-.banner {
-    background-image: url('https://via.placeholder.com/1200x400/8a5d3b/ffffff?text=F.H.U.+KLAUDIA');
-    background-size: cover;
-    background-position: center;
+header nav ul li a {
     color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.product-section {
+    padding: 50px;
     text-align: center;
-    padding: 3rem 1rem;
 }
 
-.banner h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.banner p {
-    font-size: 1.5rem;
-}
-
-/* Produkty */
-.products {
+.product-list {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
-    padding: 2rem;
 }
 
 .product {
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
 }
 
 .product img {
@@ -81,46 +53,87 @@ nav ul li a {
     height: auto;
 }
 
-.product h3 {
-    font-size: 1.3rem;
-    margin: 1rem 0;
-}
-
-.product p {
-    font-size: 1rem;
-    color: #666;
-}
-
-.product .price {
-    font-size: 1.2rem;
-    color: #5a4e44;
-    font-weight: bold;
-}
-
-.product .add-to-cart {
+.product button {
     background-color: #5a4e44;
     color: white;
-    padding: 0.5rem;
     border: none;
+    padding: 10px;
     cursor: pointer;
+    margin-top: 10px;
+}
+
+.cart-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.view-cart {
+    background-color: #5a4e44;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.cart-popup {
+    display: none;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.cart-popup h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.cart-popup .checkout {
+    background-color: #5a4e44;
+    color: white;
+    padding: 10px;
+    border: none;
     width: 100%;
-    margin-top: 1rem;
+    font-size: 1rem;
+    margin-top: 15px;
 }
 
-.product .add-to-cart:hover {
-    background-color: #8a7d62;
+.cart-popup .close-cart {
+    background-color: #ccc;
+    color: white;
+    padding: 5px;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 10px;
 }
 
-/* Stopka */
+.cart-popup ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.cart-popup ul li {
+    margin-bottom: 10px;
+}
+
 footer {
-    background-color: #d3bda8;
-    padding: 1rem;
+    background-color: #5a4e44;
+    color: white;
+    padding: 20px;
     text-align: center;
-    color: #5a4e44;
 }
 
 footer a {
-    color: #5a4e44;
+    color: white;
     text-decoration: none;
 }
 
